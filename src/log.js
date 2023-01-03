@@ -11,7 +11,7 @@ const readLog = () => {
 	}
 };
 
-const log = value => {
+const log = (value) => {
 	fs.writeFileSync(logFilePath, `${readLog()}\n[${new Date()}]:  ${value}`);
 };
 

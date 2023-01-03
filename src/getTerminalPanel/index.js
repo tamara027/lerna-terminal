@@ -12,10 +12,10 @@ const { program } = require('../commander');
 /* istanbul ignore next */
 const themeSymbolMap = {
 	test: {
-		title: text => text,
-		titleStopped: text => text,
-		msg: text => text,
-		error: text => text,
+		title: (text) => text,
+		titleStopped: (text) => text,
+		msg: (text) => text,
+		error: (text) => text,
 		titleSpace: ' ',
 		topLeft: '┌',
 		topRight: '┐',
@@ -26,10 +26,10 @@ const themeSymbolMap = {
 		bottomRight: '┘',
 	},
 	default: {
-		title: text => chalk.blue.bgWhite.bold(text),
-		titleStopped: text => chalk.red.bgWhite.bold(text),
-		msg: text => text,
-		error: text => chalk.red(text),
+		title: (text) => chalk.blue.bgWhite.bold(text),
+		titleStopped: (text) => chalk.red.bgWhite.bold(text),
+		msg: (text) => text,
+		error: (text) => chalk.red(text),
 		titleSpace: chalk.bgWhite(' '),
 		topLeft: chalk.white('┌'),
 		topRight: chalk.white('┐'),
@@ -40,10 +40,10 @@ const themeSymbolMap = {
 		bottomRight: chalk.white('┘'),
 	},
 	massive: {
-		title: text => chalk.blue.bgWhite.bold(text),
-		titleStopped: text => chalk.red.bgWhite.bold(text),
-		msg: text => text,
-		error: text => chalk.red(text),
+		title: (text) => chalk.blue.bgWhite.bold(text),
+		titleStopped: (text) => chalk.red.bgWhite.bold(text),
+		msg: (text) => text,
+		error: (text) => chalk.red(text),
 		titleSpace: chalk.bgWhite(' '),
 		topLeft: chalk.bgWhite(' '),
 		topRight: chalk.bgWhite(' '),
@@ -54,10 +54,10 @@ const themeSymbolMap = {
 		bottomRight: chalk.bgWhite(' '),
 	},
 	minimal: {
-		title: text => chalk.blue.bgWhite.bold(text),
-		titleStopped: text => chalk.red.bgWhite.bold(text),
-		msg: text => text,
-		error: text => chalk.red(text),
+		title: (text) => chalk.blue.bgWhite.bold(text),
+		titleStopped: (text) => chalk.red.bgWhite.bold(text),
+		msg: (text) => text,
+		error: (text) => chalk.red(text),
 		titleSpace: chalk.bgWhite(' '),
 		topLeft: ' ',
 		topRight: ' ',
@@ -213,7 +213,7 @@ function getTerminalPanel({ width, height, title, lines, isRunning = false }) {
  * @returns {string} - returns an bordered panel
  **/
 function getTerminal(width, height, title, lines) {
-	return lines.map(line => `${line}\n`);
+	return lines.map((line) => `${line}\n`);
 }
 
 /**
@@ -235,7 +235,7 @@ function getBox(title, lines, width) {
 	const out = [];
 	out.push(getStartLine(title, width));
 	out.push(getEmptyLine(width));
-	lines.forEach(line => {
+	lines.forEach((line) => {
 		out.push(
 			getLine({
 				filled: '',

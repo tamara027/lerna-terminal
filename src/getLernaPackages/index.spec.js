@@ -14,7 +14,7 @@ global.process = Object.assign(process, {
 	cwd: () => '/test/',
 });
 
-fs.realpathSync.mockImplementation(value => value);
+fs.realpathSync.mockImplementation((value) => value);
 glob.sync.mockImplementation(() => ['/a/package.json', '/b/package.json']);
 path.join.mockImplementation(() => '/test/');
 getLerna.mockImplementation(() => ({
@@ -22,7 +22,7 @@ getLerna.mockImplementation(() => ({
 }));
 
 describe('getLernaPackages', () => {
-	it('returns packages', done => {
+	it('returns packages', (done) => {
 		expect(
 			getLernaPackages(() => {
 				done();

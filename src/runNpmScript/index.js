@@ -15,7 +15,7 @@ const spawn = require('cross-spawn');
  * @returns {Object} returns an object including an start and stop method
  **/
 function runNpmScript({ scriptName, packagePath, onExit = () => {}, onRecieve = () => {}, onError = () => {} }) {
-	const run = cmd => {
+	const run = (cmd) => {
 		const cmdArr = cmd.split(' ');
 
 		const childProcessObj = { isRunning: true };
@@ -24,10 +24,10 @@ function runNpmScript({ scriptName, packagePath, onExit = () => {}, onRecieve = 
 			cwd: packagePath,
 		});
 
-		childProcess.stdout.on('data', data => {
+		childProcess.stdout.on('data', (data) => {
 			onRecieve(data.toString().replace(/\n$/, ''));
 		});
-		childProcess.stderr.on('data', data => {
+		childProcess.stderr.on('data', (data) => {
 			onError(data.toString().replace(/\n$/, ''));
 		});
 		childProcess.on('exit', () => {

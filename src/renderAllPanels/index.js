@@ -44,7 +44,7 @@ function renderAllPanels() {
 	let counterColumn = 0;
 	let counterRow = 0;
 
-	stateKeys.forEach(packageName => {
+	stateKeys.forEach((packageName) => {
 		if (!currentState[packageName].log) {
 			return;
 		}
@@ -61,7 +61,7 @@ function renderAllPanels() {
 			counterRow += 1;
 		}
 	});
-	getUiState().print(`${renderArr.map(panelRow => mergePanelsRow(panelRow, panelHeight).join('\n')).join('')}\n`);
+	getUiState().print(`${renderArr.map((panelRow) => mergePanelsRow(panelRow, panelHeight).join('\n')).join('')}\n`);
 }
 
 module.exports = renderAllPanels;

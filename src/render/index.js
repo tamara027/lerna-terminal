@@ -8,7 +8,7 @@ const renderHelp = require('../renderHelp');
 const renderHelpFocus = require('../renderHelpFocus');
 const renderNotification = require('../renderNotification');
 
-const isFocused = _uiState => {
+const isFocused = (_uiState) => {
 	return _uiState.focus && _uiState.focus !== 'all' && _uiState.focus !== '';
 };
 

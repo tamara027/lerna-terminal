@@ -15,8 +15,7 @@ describe('stripTerminalString', () => {
 		).toEqual(
 			JSON.stringify(
 				{
-					text:
-						'\u001b[31m 10% building modules 2/2 modules 0 active(node:11160) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead\u001b[39m',
+					text: '\u001b[31m 10% building modules 2/2 modules 0 active(node:11160) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead\u001b[39m',
 				},
 				null,
 				2
@@ -37,8 +36,7 @@ describe('stripTerminalString', () => {
 		).toEqual(
 			JSON.stringify(
 				{
-					text:
-						'\u001b[31m 10% building modules 2/2 modules 0 active(node:11160) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead\u001b[39m',
+					text: '\u001b[31m 10% building modules 2/2 modules 0 active(node:11160) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead\u001b[39m',
 				},
 				null,
 				2
@@ -59,8 +57,7 @@ describe('stripTerminalString', () => {
 		).toEqual(
 			JSON.stringify(
 				{
-					text:
-						'\u001b[31m     10% building modules 2/2 modules 0 active(node:11160) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead\u001b[39m',
+					text: '\u001b[31m     10% building modules 2/2 modules 0 active(node:11160) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead\u001b[39m',
 				},
 				null,
 				2

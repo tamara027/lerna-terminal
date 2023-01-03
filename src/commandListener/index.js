@@ -17,7 +17,7 @@ let currentSelectedHistory = 0;
 const onCtrlC = () => {
 	buffer = '';
 	const state = getState();
-	Object.keys(state).forEach(terminalId => {
+	Object.keys(state).forEach((terminalId) => {
 		// stop all child processes
 		state[terminalId].terminal.stop();
 	});
@@ -65,14 +65,9 @@ const onDown = () => {
 	}
 };
 
-const onReturn = onCommandEntered => {
+const onReturn = (onCommandEntered) => {
 	if (buffer.length > 0) {
-		onCommandEntered(
-			buffer
-				.trim()
-				.replace(/\n/g, '')
-				.replace(/\t/g, '')
-		);
+		onCommandEntered(buffer.trim().replace(/\n/g, '').replace(/\t/g, ''));
 		history.reverse();
 		history.push(buffer);
 		history.reverse();
@@ -85,7 +80,7 @@ const onReturn = onCommandEntered => {
 const onTab = () => {
 	const availablePackages = Object.values(COMMANDS);
 
-	getLernaPackages(packagePath => {
+	getLernaPackages((packagePath) => {
 		// eslint-disable-next-line
 		const packageData = getPackage(packagePath);
 		if (packageData && packageData.scripts && packageData.scripts[getProgram().script]) {
@@ -94,7 +89,7 @@ const onTab = () => {
 	});
 
 	const filteredPackages = availablePackages.filter(
-		availablePackage => new RegExp(`^${buffer}`).exec(availablePackage) !== null
+		(availablePackage) => new RegExp(`^${buffer}`).exec(availablePackage) !== null
 	);
 
 	if (filteredPackages.length === 1) {
@@ -115,7 +110,7 @@ const onTab = () => {
 	}
 };
 
-const onRecieveLetter = letter => {
+const onRecieveLetter = (letter) => {
 	if (!letter) {
 		return;
 	}

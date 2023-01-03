@@ -9,7 +9,7 @@ function runCommander() {
 	program
 		.version(packageData.version)
 		.arguments('<scriptName>')
-		.action(scriptName => {
+		.action((scriptName) => {
 			program.script = scriptName;
 		})
 		.option('-i, --ignoredPackages [string]', 'Add packages which should be ignored')

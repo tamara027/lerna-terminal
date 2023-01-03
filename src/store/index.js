@@ -3,7 +3,7 @@
 const debounce = require('lodash.debounce');
 const { program } = require('../commander');
 
-const cmdPrefix = cmd => `lerna-terminal${cmd ? `/${cmd}` : ''}~$ `;
+const cmdPrefix = (cmd) => `lerna-terminal${cmd ? `/${cmd}` : ''}~$ `;
 
 const print = debounce((value, stdin) => {
 	/* istanbul ignore next */

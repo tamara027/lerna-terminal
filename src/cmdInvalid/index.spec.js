@@ -2,7 +2,7 @@
 /* eslint global-require: 0*/
 
 describe('cmdInvalid', () => {
-	it('add notification', done => {
+	it('add notification', (done) => {
 		jest.mock('../store', () => ({
 			notifications: [],
 		}));

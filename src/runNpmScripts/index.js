@@ -11,7 +11,7 @@ const { getProgram } = require('../commander');
 const { getState } = require('../store');
 const render = require('../render');
 
-const parseText = text => {
+const parseText = (text) => {
 	// eslint-disable-next-line
 	return text.replace(new RegExp('\x1Bc', 'g'), '').split('\n');
 };
@@ -28,7 +28,7 @@ function runNpmScripts() {
 		throw new Error("the given script wasn't found!");
 	}
 
-	Object.keys(commands[program.script]).forEach(index => {
+	Object.keys(commands[program.script]).forEach((index) => {
 		const packagePath = commands[program.script][index];
 		const packageName = path.basename(packagePath);
 		if (isIgnoredPackage(packagePath, program.ignoredPackages)) {

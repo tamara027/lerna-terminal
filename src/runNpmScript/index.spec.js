@@ -39,7 +39,7 @@ describe('runNpmScript', () => {
 		}));
 		expect(typeof runNpmScript(options).stop).toBe('function');
 	});
-	it('onRecieve', done => {
+	it('onRecieve', (done) => {
 		spawn.mockImplementation(() => ({
 			stdout: {
 				on(value, cb) {
@@ -60,7 +60,7 @@ describe('runNpmScript', () => {
 		});
 		expect(typeof runNpmScript(_options)).toBe('object');
 	});
-	it('onError', done => {
+	it('onError', (done) => {
 		spawn.mockImplementation(() => ({
 			stdout: {
 				on() {},
@@ -81,7 +81,7 @@ describe('runNpmScript', () => {
 		});
 		expect(typeof runNpmScript(_options)).toBe('object');
 	});
-	it('onExit', done => {
+	it('onExit', (done) => {
 		spawn.mockImplementation(() => ({
 			stdout: {
 				on() {},
@@ -119,7 +119,7 @@ describe('runNpmScript', () => {
 		});
 		expect(typeof runNpmScript(_options)).toBe('object');
 	});
-	it('stop() -> kill', done => {
+	it('stop() -> kill', (done) => {
 		spawn.mockImplementation(() => ({
 			stdout: {
 				on() {},

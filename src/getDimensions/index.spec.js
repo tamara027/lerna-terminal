@@ -16,7 +16,7 @@ describe('getDimensions', () => {
 			};
 			resizeListener(() => {});
 		});
-		it('onResize', done => {
+		it('onResize', (done) => {
 			global.process = {
 				stdout: {
 					columns: 20,
@@ -35,7 +35,7 @@ describe('getDimensions', () => {
 				done();
 			});
 		});
-		it('nothing changed', done => {
+		it('nothing changed', (done) => {
 			global.process = {
 				stdout: {
 					columns: 20,

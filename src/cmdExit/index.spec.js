@@ -17,12 +17,12 @@ jest.mock('../store', () => {
 const { uiState } = require('../store');
 
 describe('cmdExit', () => {
-	it('uiState.focus should be empty', done => {
+	it('uiState.focus should be empty', (done) => {
 		cmdExit(undefined, done);
 		expect(uiState.focus).toBe('');
 		expect(uiState.help).toBe(false);
 	});
-	it('uiState.help should be false in case of help mode', done => {
+	it('uiState.help should be false in case of help mode', (done) => {
 		cmdFocus('utils', () => {});
 		cmdHelp(undefined, () => {});
 		cmdExit(undefined, done);

@@ -18,13 +18,13 @@ describe('provideStore', () => {
 	});
 	it('getUiState().onChange', () => {
 		const uiState = Object.assign({}, getUiState());
-		uiState.print = value => {
+		uiState.print = (value) => {
 			expect(value).toBe('');
 		};
 		uiState.onChange('lala');
 		expect(uiState.entered).toBe('lala');
 	});
-	it('getUiState().print', done => {
+	it('getUiState().print', (done) => {
 		const uiState = Object.assign({}, getUiState());
 		uiState.onChange('focus');
 		uiState.print('printValue');
@@ -35,7 +35,7 @@ describe('provideStore', () => {
 			done();
 		}, 20);
 	});
-	it('getUiState().print -> focused', done => {
+	it('getUiState().print -> focused', (done) => {
 		const uiState = Object.assign({}, getUiState(), {
 			focus: 'focusedPackage',
 		});
@@ -47,7 +47,7 @@ describe('provideStore', () => {
 			done();
 		}, 20);
 	});
-	it('getUiState().clearBuffer', done => {
+	it('getUiState().clearBuffer', (done) => {
 		const uiState = Object.assign({}, getUiState());
 		uiState.print('printValue');
 		setTimeout(() => {

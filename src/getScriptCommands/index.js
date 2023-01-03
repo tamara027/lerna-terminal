@@ -11,14 +11,14 @@ function getScriptCommands() {
 	const commands = {};
 	const appDirectory = fs.realpathSync(process.cwd());
 
-	const appendPackage = packagePath => {
+	const appendPackage = (packagePath) => {
 		const packageData = getPackage(packagePath);
 
 		if (!packageData.scripts) {
 			return;
 		}
 
-		Object.keys(packageData.scripts).forEach(scriptKey => {
+		Object.keys(packageData.scripts).forEach((scriptKey) => {
 			if (!commands[scriptKey]) {
 				commands[scriptKey] = [];
 			}

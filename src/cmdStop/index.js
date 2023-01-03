@@ -33,7 +33,7 @@ function cmdStop(packageName, render) {
 	}
 
 	// if split screen view stop all scripts
-	Object.keys(state).forEach(key => {
+	Object.keys(state).forEach((key) => {
 		if (isValidStopFunction(state, key)) {
 			state[key].terminal.stop();
 		}

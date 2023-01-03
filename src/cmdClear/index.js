@@ -12,7 +12,7 @@ function cmdClear(packageName, render) {
 		render();
 		return;
 	}
-	Object.keys(state).forEach(key => {
+	Object.keys(state).forEach((key) => {
 		if (state[key].log) {
 			state[key].log = [];
 		}

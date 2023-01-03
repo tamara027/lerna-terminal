@@ -21,7 +21,7 @@ const COMMANDS = {
 	STOP: 'stop',
 };
 
-const isValidCmd = cmd => {
+const isValidCmd = (cmd) => {
 	return Boolean(Object.keys(COMMANDS).indexOf(cmd.toUpperCase()) >= 0);
 };
 
@@ -34,10 +34,7 @@ function executeCmd(cmd) {
 		return;
 	}
 
-	const cmdSpl = cmd
-		.trim()
-		.replace(/\n|\t/g, '')
-		.split(' ');
+	const cmdSpl = cmd.trim().replace(/\n|\t/g, '').split(' ');
 
 	const focusedPackageName = getFocused();
 	const _isValidCmd = isValidCmd(cmdSpl[0]);

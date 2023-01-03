@@ -10,7 +10,7 @@ function mergePanelsRow(panels, linesCount) {
 	const lines = [];
 	let i = 0;
 
-	const mergeLine = panel => {
+	const mergeLine = (panel) => {
 		if (!lines[i]) {
 			lines.push('');
 		}

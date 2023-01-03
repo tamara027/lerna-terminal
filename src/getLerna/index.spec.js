@@ -10,7 +10,7 @@ describe('getLerna', () => {
 		fs.readFileSync.mockClear();
 	});
 	it('returns object', () => {
-		fs.realpathSync.mockImplementation(value => value);
+		fs.realpathSync.mockImplementation((value) => value);
 		fs.readFileSync.mockImplementation(() => '{ "test": true }');
 		expect(getLerna()).toEqual({ test: true });
 	});

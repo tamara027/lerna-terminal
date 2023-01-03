@@ -1,11 +1,11 @@
-const stripBackslashes = value => {
+const stripBackslashes = (value) => {
 	const result = value.split('\b');
 	if (result.length < 2) {
 		return value;
 	}
 	return `${result[0]}${result[result.length - 1]}`;
 };
-const stripTabs = value => {
+const stripTabs = (value) => {
 	const result = value.split('\t');
 	if (result.length < 2) {
 		return value;

@@ -14,7 +14,7 @@ describe('renderNotification', () => {
 		getBox.mockClear();
 		getDimensions.mockClear();
 	});
-	it('error', done => {
+	it('error', (done) => {
 		getUiState.mockImplementation(() => ({
 			print(logText) {
 				expect(typeof logText).toBe('string');
@@ -35,7 +35,7 @@ describe('renderNotification', () => {
 			done();
 		});
 	});
-	it('warning', done => {
+	it('warning', (done) => {
 		getUiState.mockImplementation(() => ({
 			print(logText) {
 				expect(typeof logText).toBe('string');
@@ -56,7 +56,7 @@ describe('renderNotification', () => {
 			done();
 		});
 	});
-	it('success', done => {
+	it('success', (done) => {
 		getUiState.mockImplementation(() => ({
 			print(logText) {
 				expect(typeof logText).toBe('string');
@@ -77,7 +77,7 @@ describe('renderNotification', () => {
 			done();
 		});
 	});
-	it('default', done => {
+	it('default', (done) => {
 		getUiState.mockImplementation(() => ({
 			print(logText) {
 				expect(typeof logText).toBe('string');
@@ -98,7 +98,7 @@ describe('renderNotification', () => {
 			done();
 		});
 	});
-	it('fallback', done => {
+	it('fallback', (done) => {
 		getUiState.mockImplementation(() => ({
 			print(logText) {
 				expect(typeof logText).toBe('string');

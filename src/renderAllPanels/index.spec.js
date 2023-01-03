@@ -44,7 +44,7 @@ getDimensions.mockImplementation(() => ({
 }));
 
 describe('renderAllPanels', () => {
-	it('default', done => {
+	it('default', (done) => {
 		getUiState.mockImplementation(() => ({
 			print(logText) {
 				expect(typeof logText).toBe('string');

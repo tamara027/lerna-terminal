@@ -19,17 +19,17 @@ const cmdClear = require('./index');
 const store = require('../store');
 
 describe('cmdClear', () => {
-	it('execute without error', done => {
+	it('execute without error', (done) => {
 		expect(cmdClear('utils', done)).toBe(undefined);
 	});
-	it('clear defined package', done => {
+	it('clear defined package', (done) => {
 		cmdClear('utils', done);
 		expect(store.state.utils.log).toEqual([]);
 	});
-	it('try clear undefined package', done => {
+	it('try clear undefined package', (done) => {
 		expect(cmdClear('utils2', done)).toBe(undefined);
 	});
-	it('clear all package', done => {
+	it('clear all package', (done) => {
 		cmdClear(undefined, done);
 		expect(store.state.utils.log).toEqual([]);
 		expect(store.state.ui.log).toEqual([]);

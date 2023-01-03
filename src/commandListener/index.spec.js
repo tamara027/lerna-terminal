@@ -11,7 +11,7 @@ jest.mock('../getLernaPackages');
 jest.mock('../commander');
 jest.mock('../getPackage');
 
-getLernaPackages.mockImplementation(onMatch => {
+getLernaPackages.mockImplementation((onMatch) => {
 	onMatch('path/a-package');
 	onMatch('path/b-package');
 	onMatch('path/s-package');
@@ -36,7 +36,7 @@ const _process = {
 	},
 };
 
-const addString = inValue => [inValue];
+const addString = (inValue) => [inValue];
 
 const addReturn = () => [
 	'',
@@ -88,7 +88,7 @@ describe('commandListener', () => {
 		getUiState.mockClear();
 		getPackage.mockClear();
 	});
-	it('write result in buffer', done => {
+	it('write result in buffer', (done) => {
 		getUiState.mockImplementation(() => ({
 			onChange(value) {
 				expect(value).toBe('test');
@@ -104,7 +104,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('send command by press enter', done => {
+	it('send command by press enter', (done) => {
 		getUiState.mockImplementation(() => ({
 			onChange(value) {
 				expect(value).toBe('');
@@ -118,7 +118,7 @@ describe('commandListener', () => {
 				},
 			}),
 		});
-		commandListener(value => {
+		commandListener((value) => {
 			expect(value).toBe('test');
 			done();
 		});
@@ -129,7 +129,7 @@ describe('commandListener', () => {
 		}));
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('press ctrl c', done => {
+	it('press ctrl c', (done) => {
 		getUiState.mockImplementation(() => ({
 			onChange() {},
 		}));
@@ -154,7 +154,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('press backspace', done => {
+	it('press backspace', (done) => {
 		let counter = 0;
 		getUiState.mockImplementation(() => ({
 			onChange(value) {
@@ -188,7 +188,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('go history up', done => {
+	it('go history up', (done) => {
 		let counter = 0;
 		const test = [
 			{ cmd: addReturn(), expected: '' },
@@ -226,7 +226,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('go history down', done => {
+	it('go history down', (done) => {
 		let counter = 0;
 		const test = [
 			{ cmd: addUp(), expected: 'tes' },
@@ -258,7 +258,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('press tab - with a', done => {
+	it('press tab - with a', (done) => {
 		let counter = 0;
 		getPackage.mockImplementation(() => ({
 			scripts: {
@@ -285,7 +285,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('press tab - invalid package data', done => {
+	it('press tab - invalid package data', (done) => {
 		let counter = 0;
 		getPackage.mockImplementation(() => ({
 			scripts: {},
@@ -310,7 +310,7 @@ describe('commandListener', () => {
 		});
 		expect(commandListener(() => {})).toBe(undefined);
 	});
-	it('press tab - multiple commands available', done => {
+	it('press tab - multiple commands available', (done) => {
 		let counter = 0;
 		getPackage.mockImplementation(() => ({
 			scripts: {

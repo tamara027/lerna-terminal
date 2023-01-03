@@ -34,7 +34,7 @@ function cmdStart(packageName, render) {
 
 	// if split screen view start or restart all scripts
 	cmdClear(undefined, render);
-	Object.keys(state).forEach(key => {
+	Object.keys(state).forEach((key) => {
 		if (state[key].terminal && typeof state[key].terminal.start === 'function') {
 			state[key].terminal = state[key].terminal.start();
 		}

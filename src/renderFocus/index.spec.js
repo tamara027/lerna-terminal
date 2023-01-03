@@ -16,7 +16,7 @@ describe('renderFocus', () => {
 		getDimensions.mockClear();
 		renderAllPanels.mockClear();
 	});
-	it('default', done => {
+	it('default', (done) => {
 		getState.mockImplementation(() => ({
 			utils: { log: [123] },
 			ui: { log: ['started'] },
@@ -33,7 +33,7 @@ describe('renderFocus', () => {
 		renderAllPanels.mockImplementation(() => {});
 		renderFocus();
 	});
-	it('unknow focus -> renderAllPanels', done => {
+	it('unknow focus -> renderAllPanels', (done) => {
 		getState.mockImplementation(() => ({
 			utils: { log: [123] },
 			ui: { log: ['started'] },

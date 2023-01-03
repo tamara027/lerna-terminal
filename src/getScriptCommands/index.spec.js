@@ -14,9 +14,9 @@ global.process = Object.assign(process, {
 	cwd: () => '/test/',
 });
 
-fs.realpathSync.mockImplementation(value => value);
+fs.realpathSync.mockImplementation((value) => value);
 fs.readFileSync.mockImplementation(() => '{ "test": true }');
-getLernaPackages.mockImplementation(onMatch => {
+getLernaPackages.mockImplementation((onMatch) => {
 	onMatch('path-to-package-a');
 	onMatch('path-to-package-b');
 });
@@ -38,7 +38,7 @@ describe('getScriptCommands', () => {
 		expect(getScriptCommands()).toEqual({ start: ['path-to-package-a', 'path-to-package-b'] });
 	});
 	it('a package without scripts', () => {
-		getPackage.mockImplementation(path => {
+		getPackage.mockImplementation((path) => {
 			return path === 'path-to-package-a'
 				? {
 						scripts: {

@@ -23,7 +23,7 @@ describe('render', () => {
 		renderHelpFocus.mockClear();
 		renderNotification.mockClear();
 	});
-	it('focus all', done => {
+	it('focus all', (done) => {
 		getUiState.mockImplementation(() => ({ focus: 'all', notifications: [] }));
 		renderAllPanels.mockImplementation(() => {
 			done();
@@ -34,7 +34,7 @@ describe('render', () => {
 		renderNotification.mockImplementation(() => {});
 		expect(render()).toBe(undefined);
 	});
-	it('render notification', done => {
+	it('render notification', (done) => {
 		getUiState.mockImplementation(() => ({
 			focus: 'all',
 			notifications: [
@@ -54,7 +54,7 @@ describe('render', () => {
 		});
 		expect(render()).toBe(undefined);
 	});
-	it('focus empty string', done => {
+	it('focus empty string', (done) => {
 		getUiState.mockImplementation(() => ({ focus: '', notifications: [] }));
 		renderAllPanels.mockImplementation(() => {
 			done();
@@ -65,7 +65,7 @@ describe('render', () => {
 		renderNotification.mockImplementation(() => {});
 		expect(render()).toBe(undefined);
 	});
-	it('help', done => {
+	it('help', (done) => {
 		getUiState.mockImplementation(() => ({ focus: '', notifications: [], help: true }));
 		renderAllPanels.mockImplementation(() => {});
 		renderHelp.mockImplementation(() => {
@@ -76,7 +76,7 @@ describe('render', () => {
 		renderNotification.mockImplementation(() => {});
 		expect(render()).toBe(undefined);
 	});
-	it('focus help', done => {
+	it('focus help', (done) => {
 		getUiState.mockImplementation(() => ({ focus: 'test', notifications: [], help: true }));
 		renderAllPanels.mockImplementation(() => {});
 		renderHelp.mockImplementation(() => {});
@@ -87,7 +87,7 @@ describe('render', () => {
 		renderNotification.mockImplementation(() => {});
 		expect(render()).toBe(undefined);
 	});
-	it('focus', done => {
+	it('focus', (done) => {
 		getUiState.mockImplementation(() => ({ focus: 'test', notifications: [] }));
 		renderAllPanels.mockImplementation(() => {});
 		renderHelp.mockImplementation(() => {});

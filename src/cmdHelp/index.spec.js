@@ -2,7 +2,7 @@
 /* eslint global-require: 0*/
 
 describe('cmdHelp', () => {
-	it('set help flag', done => {
+	it('set help flag', (done) => {
 		jest.mock('../store', () => {
 			return {
 				state: {},

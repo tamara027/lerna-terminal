@@ -38,7 +38,7 @@ describe('runNpmScripts', () => {
 		}).toThrow();
 	});
 	it('packages ignored', () => {
-		basename.mockImplementation(_path => _path.split('/')[4]);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		getProgram.mockImplementation(() => ({ script: 'start' }));
 		isIgnoredPackage.mockImplementation(() => true);
@@ -48,7 +48,7 @@ describe('runNpmScripts', () => {
 		getState.mockImplementation(() => ({}));
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		isIgnoredPackage.mockImplementation(() => false);
-		basename.mockImplementation(_path => _path.split('/')[4]);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
 		runNpmScript.mockImplementation(() => 'terminal');
 		expect(runNpmScripts()).toEqual({
 			ui: { log: [], terminal: 'terminal' },
@@ -60,8 +60,8 @@ describe('runNpmScripts', () => {
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		getProgram.mockImplementation(() => ({ script: 'start' }));
 		isIgnoredPackage.mockImplementation(() => false);
-		basename.mockImplementation(_path => _path.split('/')[4]);
-		getText.mockImplementation(text => text);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
+		getText.mockImplementation((text) => text);
 		render.mockImplementation(() => {});
 		runNpmScript.mockImplementation(({ onRecieve }) => {
 			onRecieve('test\n');
@@ -74,8 +74,8 @@ describe('runNpmScripts', () => {
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		getProgram.mockImplementation(() => ({ script: 'start' }));
 		isIgnoredPackage.mockImplementation(() => false);
-		basename.mockImplementation(_path => _path.split('/')[4]);
-		getText.mockImplementation(text => text);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
+		getText.mockImplementation((text) => text);
 		render.mockImplementation(() => {});
 		runNpmScript.mockImplementation(({ onError }) => {
 			onError('test\n');
@@ -88,8 +88,8 @@ describe('runNpmScripts', () => {
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		getProgram.mockImplementation(() => ({ script: 'start' }));
 		isIgnoredPackage.mockImplementation(() => false);
-		basename.mockImplementation(_path => _path.split('/')[4]);
-		getText.mockImplementation(text => text);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
+		getText.mockImplementation((text) => text);
 		render.mockImplementation(() => {});
 		runNpmScript.mockImplementation(({ onExit }) => {
 			onExit();
@@ -101,8 +101,8 @@ describe('runNpmScripts', () => {
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		getProgram.mockImplementation(() => ({ script: 'start' }));
 		isIgnoredPackage.mockImplementation(() => false);
-		basename.mockImplementation(_path => _path.split('/')[4]);
-		getText.mockImplementation(text => text);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
+		getText.mockImplementation((text) => text);
 		render.mockImplementation(() => {});
 		runNpmScript.mockImplementation(({ onRecieve }) => {
 			onRecieve('\x1Bc');
@@ -114,8 +114,8 @@ describe('runNpmScripts', () => {
 		getScriptCommands.mockImplementation(() => ({ start: ['/path/to/package/utils', '/path/to/package/ui'] }));
 		getProgram.mockImplementation(() => ({ script: 'start' }));
 		isIgnoredPackage.mockImplementation(() => false);
-		basename.mockImplementation(_path => _path.split('/')[4]);
-		getText.mockImplementation(text => text);
+		basename.mockImplementation((_path) => _path.split('/')[4]);
+		getText.mockImplementation((text) => text);
 		render.mockImplementation(() => {});
 		runNpmScript.mockImplementation(({ onError }) => {
 			onError('\x1Bc');

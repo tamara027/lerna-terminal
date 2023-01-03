@@ -14,9 +14,9 @@ function getLernaPackages(onMatch) {
 	const lerna = getLerna();
 	const packagePaths = [];
 
-	lerna.packages.forEach(packageRelPath => {
+	lerna.packages.forEach((packageRelPath) => {
 		const files = glob.sync(path.join(appDirectory, packageRelPath, 'package.json'));
-		files.forEach(file => {
+		files.forEach((file) => {
 			const cleanPath = file.replace(/\/package.json$/, '');
 			packagePaths.push(cleanPath);
 			if (onMatch) {

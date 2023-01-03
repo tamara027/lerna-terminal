@@ -14,12 +14,12 @@ const isValidChildProcessExecute = (_state, packageName) => {
 const notifications = {
 	invalidCmd: () => ({
 		type: 'error',
-		message: `The entered command is invalid, please enter help for more informations.`,
+		message: 'The entered command is invalid, please enter help for more informations.',
 		delay: 2000,
 	}),
 	invalidChildProcessExecute: () => ({
 		type: 'error',
-		message: `Child process not found, please enter help for more informations.`,
+		message: 'Child process not found, please enter help for more informations.',
 		delay: 2000,
 	}),
 };

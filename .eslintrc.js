@@ -1,10 +1,14 @@
 module.exports = {
 	extends: [
-		'@namics/eslint-config/configurations/es6-node.js',
-		'@namics/eslint-config/configurations/es6-node-disable-styles.js',
+		'@merkle-open/eslint-config/configurations/es8-node.js',
 	],
 	rules: {
-		complexity: 0,
+		'builtinGlobals': 0,
+		'complexity': 0,
+		'import/no-unresolved': 0,
+		'max-len': 0,
+		'no-mixed-spaces-and-tabs': 0,
+		'no-redeclare': 0,
 	},
 	globals: {
 		describe: true,

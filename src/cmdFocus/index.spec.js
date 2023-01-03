@@ -2,7 +2,7 @@
 /* eslint global-require: 0*/
 
 describe('cmdFocus', () => {
-	it('focus defined package', done => {
+	it('focus defined package', (done) => {
 		jest.mock('../store', () => {
 			return {
 				state: {},

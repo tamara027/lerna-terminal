@@ -13,7 +13,7 @@ function isIgnoredPackage(packagePath, ignoredPackages) {
 
 	const packageName = path.basename(packagePath);
 	let ignoreCounter = 0;
-	ignoredPackages.split(',').forEach(ignoredPackage => {
+	ignoredPackages.split(',').forEach((ignoredPackage) => {
 		if (packageName.match(new RegExp(`^${ignoredPackage}$`)) !== null) {
 			ignoreCounter += 1;
 		}

@@ -40,7 +40,7 @@ describe('handleKillProcess', () => {
 		expect(cmdStop).toHaveBeenCalledTimes(1);
 	});
 
-	it('run process.exit on SIGINT', done => {
+	it('run process.exit on SIGINT', (done) => {
 		cmdStop.mockImplementation((packageName, cb) => {
 			expect(packageName).toBe(undefined);
 			cb();
@@ -57,7 +57,7 @@ describe('handleKillProcess', () => {
 		});
 		handleKillProcess();
 	});
-	it('run process.exit on SIGTERM', done => {
+	it('run process.exit on SIGTERM', (done) => {
 		cmdStop.mockImplementation((packageName, cb) => {
 			expect(packageName).toBe(undefined);
 			cb();
